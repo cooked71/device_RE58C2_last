@@ -15,16 +15,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 PRODUCT_ENABLE_UFFD_GC := false
 
 # Compatibility matrices
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := \
-    device/realme/RE58C2/product/compatibility_matrix.xml
+#DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := \
+#    device/realme/RE58C2/product/compatibility_matrix.xml
 
-DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
-    device/realme/RE58C2/compatibility_matrix.device.xml
+# DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
+#    device/realme/RE58C2/compatibility_matrix.device.xml
+
+DEVICE_MANIFEST_FILES := \
+    vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml
+
 
 # Manifest files
 DEVICE_MANIFEST_FILES := \
-    device/realme/RE58C2/manifest.xml \
     vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml
+    #device/realme/RE58C2/manifest.xml \
 
 # VINTF manifests from vendor
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
@@ -130,7 +134,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_vendor=true
 
 # API levels
-PRODUCT_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
