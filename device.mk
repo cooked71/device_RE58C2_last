@@ -22,7 +22,7 @@ PRODUCT_ENABLE_UFFD_GC := false
 #    device/realme/RE58C2/compatibility_matrix.device.xml
 
 DEVICE_MANIFEST_FILES := \
-    vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml
+    vendor/realme/RE58C2/proprietary/vendor-manifest/manifest.xml
 
 
 # Manifest files
