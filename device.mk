@@ -26,9 +26,9 @@ DEVICE_MANIFEST_FILES := \
 
 
 # Manifest files
-DEVICE_MANIFEST_FILES := \
-    vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml
-    #device/realme/RE58C2/manifest.xml \
+# DEVICE_MANIFEST_FILES := \
+    #vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml\
+    #device/realme/RE58C2/manifest.xml 
 
 # VINTF manifests from vendor
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
