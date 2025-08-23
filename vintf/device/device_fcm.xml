@@ -1,152 +1,51 @@
+<compatibility-matrix version="5.0" type="framework">
+    <!-- Required/optional HALs -->
+    <hal format="hidl">
+        <name>android.hardware.cas</name>
+        <version>1.0</version>
+    </hal>
 
-<compatibility-matrix  version="5.0" type="framework">
-    <hal format="hidl" max-level="6">
-        <name>android.frameworks.displayservice</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IDisplayService</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IDisplayService/default</fqname>
-    </hal>
-    <hal format="hidl" max-level="5">
-        <name>android.frameworks.schedulerservice</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISchedulingPolicyService</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISchedulingPolicyService/default</fqname>
-    </hal>
     <hal format="hidl">
-        <name>android.frameworks.sensorservice</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISensorManager</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISensorManager/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hidl.manager</name>
-        <transport>hwbinder</transport>
+        <name>android.hardware.nfc</name>
         <version>1.2</version>
-        <interface>
-            <name>IServiceManager</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.2::IServiceManager/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>android.hidl.memory</name>
-        <transport arch="32+64">passthrough</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IMapper</name>
-            <instance>ashmem</instance>
-        </interface>
-        <fqname>@1.0::IMapper/ashmem</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hidl.token</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ITokenManager</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ITokenManager/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.system.net.netd</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>INetd</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.1::INetd/default</fqname>
-    </hal>
-        <hal format="hidl">
-        <name>android.system.wifi.keystore</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IKeystore</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IKeystore/default</fqname>
-    </hal>
-    <hal format="native">
-        <name>netutils-wrapper</name>
-        <version>1.0</version>
-    </hal>
-     <!--  ADDED MISSING -->
-     <hal format="hidl" optional="true">
+
+    <!-- Vendor optional HALs -->
+    <hal format="hidl" optional="true">
         <name>vendor.nxp.nxpnfc</name>
         <version>2.0</version>
-        <interface>
-            <name>INxpNfc</name>
-            <instance>default</instance>
-        </interface>
     </hal>
 
     <hal format="hidl" optional="true">
         <name>vendor.nxp.nxpnfclegacy</name>
         <version>1.0</version>
-        <interface>
-            <name>INxpNfcLegacy</name>
-            <instance>default</instance>
-        </interface>
     </hal>
 
     <hal format="hidl" optional="true">
         <name>vendor.oppo.engnative.engineer</name>
         <version>1.0</version>
-        <interface>
-            <name>IEngineer</name>
-            <instance>default</instance>
-        </interface>
     </hal>
 
     <hal format="hidl" optional="true">
         <name>vendor.sprd.hardware.connmgr</name>
         <version>1.0</version>
-        <interface>
-            <name>IConnmgr</name>
-            <instance>default</instance>
-        </interface>
     </hal>
 
     <hal format="aidl" optional="true">
         <name>vendor.sprd.hardware.enhance</name>
-        <interface>
-            <name>IEnhance</name>
-            <instance>default</instance>
-        </interface>
     </hal>
 
     <hal format="hidl" optional="true">
         <name>vendor.sprd.hardware.network</name>
         <version>1.0</version>
-        <interface>
-            <name>INetworkControl</name>
-            <instance>default</instance>
-        </interface>
     </hal>
 
     <hal format="hidl" optional="true">
         <name>vendor.sprd.hardware.wcn</name>
         <version>1.0</version>
-        <interface>
-            <name>IWcnVendorInterface</name>
-            <instance>default</instance>
-        </interface>
     </hal>
-    <!--  END MISSING -->
+
+    <!-- System SDK levels -->
     <system-sdk>
         <version>28</version>
         <version>29</version>
@@ -167,4 +66,5 @@
     <avb>
         <vbmeta-version>1.0</vbmeta-version>
     </avb>
-</compatibility-matrix >
+</compatibility-matrix>
+
