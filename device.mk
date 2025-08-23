@@ -32,7 +32,7 @@ DEVICE_MANIFEST_FILES := \
 
 DEVICE_MATRIX_FILE :=$(LOCAL_PATH)/vintf/device/product_fcm.xml
 
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_fcm.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
 
 
 # Optional: directories with manifest fragments (vendor and system)
