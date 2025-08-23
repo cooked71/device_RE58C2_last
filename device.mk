@@ -37,7 +37,7 @@ DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/compatibility_matrix.device.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
 
 # Product requirements -> /product/etc/vintf/compatibility_matrix.xml
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/device/product_product.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.xml
 
 # Optional: directories with manifest fragments
 VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
