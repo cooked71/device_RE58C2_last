@@ -32,11 +32,12 @@ DEVICE_MANIFEST_FILES := \
 
 # Vendor (device) FCM → goes to /vendor/etc/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
+    $(LOCAL_PATH)/vintf/device/product_fcm.xml
+
     
 # Product (framework) FCM → goes to /system/etc/vintf/compatibility_matrix.xml
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := \
-    $(LOCAL_PATH)/vintf/device/product_fcm.xml
+    $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
 
 # Optional: directories with manifest fragments (vendor and system)
 VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
