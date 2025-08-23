@@ -25,20 +25,23 @@ PRODUCT_ENABLE_UFFD_GC := false
 # DEVICE_MANIFEST_FILES := \
 #    vendor/realme/RE58C2/proprietary/vendor-manifest/manifest.xml
 
-# Device manifest files (can include fragments)
+# Device manifest files
 DEVICE_MANIFEST_FILES := \
     $(LOCAL_PATH)/vintf/main/manifest.xml \
     $(LOCAL_PATH)/vintf/main/manifest/*.xml
 
-DEVICE_MATRIX_FILE :=$(LOCAL_PATH)/vintf/device/product_fcm.xml
+# Device capabilities (résumé) -> /system/etc/vintf/compatibility_matrix.device.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/compatibility_matrix.device.xml
 
+# Device requirements -> /vendor/etc/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
 
+# Product requirements -> /product/etc/vintf/compatibility_matrix.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/device/product_product.xml
 
-# Optional: directories with manifest fragments (vendor and system)
+# Optional: directories with manifest fragments
 VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
 VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
-
 # Manifest files
 # DEVICE_MANIFEST_FILES := \
     #vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml\
