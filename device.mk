@@ -23,12 +23,12 @@ PRODUCT_ENABLE_UFFD_GC := false
 # DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
     device/realme/RE58C2/compatibility_matrix.device.xml
 
-# COMPLETELY REMOVE ALL THESE LINES:
+# vintf ....
  DEVICE_MANIFEST_FILES := \
     $(LOCAL_PATH)/vintf/vendor/manifest.xml \
     $(LOCAL_PATH)/vintf/vendor/manifest/*.xml
 
- DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
+ #DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
 
  DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
 
