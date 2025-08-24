@@ -11,10 +11,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
-PRODUCT_PACKAGES += \
-    checkvintf-ignore-device-matrix
-
-
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
@@ -36,7 +32,7 @@ DEVICE_MANIFEST_FILES := \
     $(LOCAL_PATH)/vintf/vendor/manifest/*.xml
 
 # Device capabilities (résumé) -> /system/etc/vintf/compatibility_matrix.device.xml
-DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/compatibility_matrix.device.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
 
 # Device requirements -> /vendor/etc/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
