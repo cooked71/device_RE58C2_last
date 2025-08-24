@@ -24,18 +24,18 @@ PRODUCT_ENABLE_UFFD_GC := false
     device/realme/RE58C2/compatibility_matrix.device.xml
 
 # COMPLETELY REMOVE ALL THESE LINES:
-# DEVICE_MANIFEST_FILES := \
-#    $(LOCAL_PATH)/vintf/vendor/manifest.xml \
-#    $(LOCAL_PATH)/vintf/vendor/manifest/*.xml
-#
-# DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
-#
-# DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
-#
-# DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.xml
-#
-# VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
-# VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
+ DEVICE_MANIFEST_FILES := \
+    $(LOCAL_PATH)/vintf/vendor/manifest.xml \
+    $(LOCAL_PATH)/vintf/vendor/manifest/*.xml
+
+ DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
+
+ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
+
+ DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.xml
+
+ VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
+ VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
 
 # KEEP ONLY THESE VINTF DISABLE FLAGS:
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
