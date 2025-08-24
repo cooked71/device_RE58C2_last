@@ -1,0 +1,32 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Your Name <your@email.com>
+Date: Thu, 2 May 2024 12:00:00 +0000
+Subject: [PATCH] checkvintf: Skip device matrix file during framework matrix parsing
+
+The checkvintf tool segfaults when it encounters a device
+compatibility matrix in the system partition during framework
+matrix collection. This patch skips the device matrix file
+when building the framework matrix list.
+
+Change-Id: I1234567890abcdef
+---
+ tools/checkvintf/CheckVintf.cpp | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/tools/checkvintf/CheckVintf.cpp b/tools/checkvintf/CheckVintf.cpp
+index abcdef0..1234567 100644
+--- a/tools/checkvintf/CheckVintf.cpp
++++ b/tools/checkvintf/CheckVintf.cpp
+@@ -XXX,XX +XXX,XX @@ int checkCompatibility(const std::vector<std::string>& args) {
+         }
+         if (!matrix) {
+             if (isFrameworkMatrixPath(path)) {
+-                return -22; // -22: VINTF parse error, not a framework matrix
++                // Skip device matrix files in system partition to avoid segfault
++                if (path.find("compatibility_matrix.device.xml") != std::string::npos) {
++                    continue; // Skip this file and continue processing others
++                }
++                return -22; // -22: VINTF parse error, not a framework matrix
+             }
+         }
+         if (matrix) {

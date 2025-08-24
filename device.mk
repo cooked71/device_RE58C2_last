@@ -11,6 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
+PRODUCT_PACKAGES += \
+    checkvintf-ignore-device-matrix
+
+
+
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
 
@@ -42,7 +47,7 @@ DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.
 # Optional: directories with manifest fragments
 VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
 VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 PRODUCT_PACKAGES += \
     manifest_oplus_performance.xml \

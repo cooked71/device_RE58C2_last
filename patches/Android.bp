@@ -1,0 +1,5 @@
+patch_module {
+    name: "checkvintf-ignore-device-matrix",
+    srcs: ["checkvintf-ignore-device-matrix.patch"],
+    target_module: "checkvintf",
+}
