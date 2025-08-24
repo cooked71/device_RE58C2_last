@@ -23,23 +23,24 @@ PRODUCT_ENABLE_UFFD_GC := false
 # DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
     device/realme/RE58C2/compatibility_matrix.device.xml
 
-# vintf ....
- DEVICE_MANIFEST_FILES := \
-    $(LOCAL_PATH)/vintf/vendor/manifest.xml \
-    $(LOCAL_PATH)/vintf/vendor/manifest/*.xml
+# Device manifest files
+DEVICE_MANIFEST_FILES := \
+    $(LOCAL_PATH)/vintf/main/manifest.xml \
+    $(LOCAL_PATH)/vintf/main/manifest/*.xml
 
- #DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
+# Device capabilities (résumé) -> /system/etc/vintf/compatibility_matrix.device.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/compatibility_matrix.device.xml
 
- DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
+# Device requirements -> /vendor/etc/vintf/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
 
- DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.xml
+# Product requirements -> /product/etc/vintf/compatibility_matrix.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/device/product_product.xml
 
- VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
- VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
+# Optional: directories with manifest fragments
+VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
+VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
 
-# KEEP ONLY THESE VINTF DISABLE FLAGS:
-PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
-PRODUCT_ENFORCE_VINTF_MANIFEST := false
 
 PRODUCT_PACKAGES += \
     manifest_oplus_performance.xml \
