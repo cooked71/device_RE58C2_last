@@ -23,30 +23,21 @@ PRODUCT_ENABLE_UFFD_GC := false
 # DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
     device/realme/RE58C2/compatibility_matrix.device.xml
 
+# COMPLETELY REMOVE ALL THESE LINES:
 # DEVICE_MANIFEST_FILES := \
-#    vendor/realme/RE58C2/proprietary/vendor-manifest/manifest.xml
+#    $(LOCAL_PATH)/vintf/vendor/manifest.xml \
+#    $(LOCAL_PATH)/vintf/vendor/manifest/*.xml
+#
+# DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
+#
+# DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
+#
+# DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.xml
+#
+# VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
+# VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
 
-# Device manifest files
-DEVICE_MANIFEST_FILES := \
-    $(LOCAL_PATH)/vintf/vendor/manifest.xml \
-    $(LOCAL_PATH)/vintf/vendor/manifest/*.xml
-
-# Device capabilities (résumé) -> /system/etc/vintf/compatibility_matrix.device.xml
-DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/device_capabilities.xml
-
-# Device requirements -> /vendor/etc/vintf/compatibility_matrix.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/vendor/device_fcm.xml
-
-# Product requirements -> /product/etc/vintf/compatibility_matrix.xml
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.xml
-
-# Optional: directories with manifest fragments
-VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
-VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
-# Add this to your device.mk to disable VINTF checks temporarily
-PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
-PRODUCT_ENFORCE_VINTF_MANIFEST := false
-
+# KEEP ONLY THESE VINTF DISABLE FLAGS:
 PRODUCT_PACKAGES += \
     manifest_oplus_performance.xml \
     manifest_dualsim.xml \
