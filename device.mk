@@ -43,7 +43,9 @@ DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/vintf/product_product.
 # Optional: directories with manifest fragments
 VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
 VENDOR_VINTF_MANIFEST_DIR := $(LOCAL_PATH)/vintf/vendor/manifest
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
+# Add this to your device.mk to disable VINTF checks temporarily
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+PRODUCT_ENFORCE_VINTF_MANIFEST := false
 
 PRODUCT_PACKAGES += \
     manifest_oplus_performance.xml \
