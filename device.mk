@@ -91,8 +91,6 @@ HARDWARE_MANIFESTS := \
     vendor.sprd.hardware.thermal@2.0-service \
     vibrator
 
-DEVICE_MANIFEST_FILES += $(foreach manifest,$(HARDWARE_MANIFESTS),\
-   vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest/$(manifest).xml)
 
 
 
