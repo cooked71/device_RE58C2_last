@@ -28,12 +28,16 @@ DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := \
     device/realme/RE58C2/product/compatibility_matrix.xml
 
 DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
-    device/realme/RE58C2/compatibility_matrix.device.xml
+    device/realme/RE58C2/vintf/vendor/device_fcm.xml
+
+# Manifest files
+# DEVICE_MANIFEST_FILES := \
+# device/realme/RE58C2/manifest.xml \
+# vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml
 
 # Manifest files
 DEVICE_MANIFEST_FILES := \
-    device/realme/RE58C2/manifest.xml \
-    vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml
+ device/realme/RE58C2/vintf/vendor/manifest.xml
 
 # VINTF manifests from vendor
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
