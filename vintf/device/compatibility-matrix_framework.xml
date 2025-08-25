@@ -1,5 +1,13 @@
 <compatibility-matrix version="5.0" type="framework">
     <!-- Required/optional HALs -->
+    <hal format="aidl" optional="true">
+        <name>android.hardware.sensors</name>
+        <version>1</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>android.hardware.cas</name>
         <version>1.0</version>
