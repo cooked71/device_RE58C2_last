@@ -20,29 +20,81 @@ PRODUCT_PACKAGES += \
     vendor.vintf.manifest \
     odm.vintf.manifest
 
-# Vendor manifest
+# ============================================================
+# VINTF configuration for RE58C2
+# ============================================================
+
+# --- Device (Framework/System) ---
+DEVICE_MANIFEST_FILE := device/realme/RE58C2/vintf/device/manifest.xml
+DEVICE_MANIFEST_FILES := device/realme/RE58C2/vintf/device/manifest/*.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/realme/RE58C2/vintf/device/compatibility-matrix_framework.xml
+
+# --- Vendor ---
 DEVICE_VENDOR_MANIFEST_FILE := device/realme/RE58C2/vintf/vendor/manifest.xml
 DEVICE_VENDOR_MANIFEST_FILES := device/realme/RE58C2/vintf/vendor/manifest/*.xml
 
-# ODM manifest
+# --- ODM ---
 DEVICE_ODM_MANIFEST_FILE := device/realme/RE58C2/vintf/odm/manifest.xml
 DEVICE_ODM_MANIFEST_FILES := device/realme/RE58C2/vintf/odm/manifest/*.xml
 
-# Framework compatibility matrix
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/realme/RE58C2/vintf/device/compatibility-matrix_framework.xml
-
-# Framework system manifest
-DEVICE_MANIFEST_FILE := device/realme/RE58C2/vintf/device/manifest.xml
-DEVICE_MANIFEST_FILES := device/realme/RE58C2/vintf/device/manifest/*.xml
-
-# Optional: If you need to include additional VINTF fragments
+# --- Enforce checks ---
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
+
+
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_MANIFEST_FILE):$(TARGET_COPY_OUT_SYSTEM)/etc/vintf/manifest.xml \
+    $(DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE):$(TARGET_COPY_OUT_SYSTEM)/etc/vintf/compatibility_matrix.device.xml \
+    $(DEVICE_VENDOR_MANIFEST_FILE):$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest.xml \
+    $(DEVICE_ODM_MANIFEST_FILE):$(TARGET_COPY_OUT_ODM)/etc/vintf/manifest.xml
 
 
 PRODUCT_PACKAGES += \
     manifest_oplus_performance.xml \
     manifest_dualsim.xml \
     manifest_media_c2_V1_1_unisoc.xml
+
+HARDWARE_MANIFESTS := \
+    ai_engine-default \
+    android.hardware.biometrics.fingerprint@2.1-service \
+    android.hardware.cas@1.2-service \
+    android.hardware.drm-service.clearkey \
+    android.hardware.gatekeeper@1.0-service.trusty \
+    android.hardware.health-service.example \
+    android.hardware.security.keymint@2.0-unisoc.service.trusty \
+    android.hardware.sensors-multihal \
+    android.hardware.thermal@2.0-service \
+    android.hardware.usb-service.example \
+    android.hardware.wifi@1.0-service \
+    android.hardware.wifi.hostapd \
+    android.hardware.wifi.supplicant \
+    bluetooth_audio \
+    cplog_svc-default \
+    face-default \
+    hdcp-default \
+    lights \
+    memtrack \
+    network-default \
+    power.stats-default \
+    rebootescrow-default \
+    soter_default \
+    trusty-default \
+    tui-default \
+    vendor-fingerprintmmi-default \
+    vendor-log-default \
+    vendor-oemlock-default \
+    vendor-power-default \
+    vendor.sprd.hardware.boot@1.2 \
+    vendor.sprd.hardware.commondcs@1.0-service \
+    vendor.sprd.hardware.gnss@2.2-service \
+    vendor.sprd.hardware.thermal@2.0-service \
+    vibrator
+
+DEVICE_MANIFEST_FILES += $(foreach manifest,$(HARDWARE_MANIFESTS),\
+   vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest/$(manifest).xml)
+
+
 
 
 # ===========================
