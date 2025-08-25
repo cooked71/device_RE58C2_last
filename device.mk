@@ -15,32 +15,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
 
-# Compatibility matrices
-#DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := \
-#    device/realme/RE58C2/product/compatibility_matrix.xml
+# VINTF configurations
+PRODUCT_PACKAGES += \
+    vendor.vintf.manifest \
+    odm.vintf.manifest
 
+# Vendor manifest
+DEVICE_VENDOR_MANIFEST_FILE := device/realme/RE58C2/vintf/vendor/manifest.xml
+DEVICE_VENDOR_MANIFEST_FILES := device/realme/RE58C2/vintf/vendor/manifest/*.xml
 
-# DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
-    device/realme/RE58C2/compatibility_matrix.device.xml
+# ODM manifest
+DEVICE_ODM_MANIFEST_FILE := device/realme/RE58C2/vintf/odm/manifest.xml
+DEVICE_ODM_MANIFEST_FILES := device/realme/RE58C2/vintf/odm/manifest/*.xml
 
-# Compatibility matrices
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := \
-    device/realme/RE58C2/product/compatibility_matrix.xml
+# Framework compatibility matrix
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/realme/RE58C2/vintf/device/compatibility-matrix_framework.xml
 
-DEVICE_VENDOR_COMPATIBILITY_MATRIX_FILE := \
-    device/realme/RE58C2/vintf/vendor/device_fcm.xml
+# Framework system manifest
+DEVICE_MANIFEST_FILE := device/realme/RE58C2/vintf/device/manifest.xml
+DEVICE_MANIFEST_FILES := device/realme/RE58C2/vintf/device/manifest/*.xml
 
-# Manifest files
-# DEVICE_MANIFEST_FILES := \
-# device/realme/RE58C2/manifest.xml \
-# vendor/realme/RE58C2/proprietary/vendor/etc/vintf/manifest.xml
+# Optional: If you need to include additional VINTF fragments
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
-# Manifest files
-DEVICE_MANIFEST_FILES := \
- device/realme/RE58C2/vintf/vendor/manifest.xml
-
-# VINTF manifests from vendor
-PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 PRODUCT_PACKAGES += \
     manifest_oplus_performance.xml \
