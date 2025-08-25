@@ -55,41 +55,6 @@ PRODUCT_PACKAGES += \
     manifest_dualsim.xml \
     manifest_media_c2_V1_1_unisoc.xml
 
-HARDWARE_MANIFESTS := \
-    ai_engine-default \
-    android.hardware.biometrics.fingerprint@2.1-service \
-    android.hardware.cas@1.2-service \
-    android.hardware.drm-service.clearkey \
-    android.hardware.gatekeeper@1.0-service.trusty \
-    android.hardware.health-service.example \
-    android.hardware.security.keymint@2.0-unisoc.service.trusty \
-    android.hardware.sensors-multihal \
-    android.hardware.thermal@2.0-service \
-    android.hardware.usb-service.example \
-    android.hardware.wifi@1.0-service \
-    android.hardware.wifi.hostapd \
-    android.hardware.wifi.supplicant \
-    bluetooth_audio \
-    cplog_svc-default \
-    face-default \
-    hdcp-default \
-    lights \
-    memtrack \
-    network-default \
-    power.stats-default \
-    rebootescrow-default \
-    soter_default \
-    trusty-default \
-    tui-default \
-    vendor-fingerprintmmi-default \
-    vendor-log-default \
-    vendor-oemlock-default \
-    vendor-power-default \
-    vendor.sprd.hardware.boot@1.2 \
-    vendor.sprd.hardware.commondcs@1.0-service \
-    vendor.sprd.hardware.gnss@2.2-service \
-    vendor.sprd.hardware.thermal@2.0-service \
-    vibrator
 
 
 
