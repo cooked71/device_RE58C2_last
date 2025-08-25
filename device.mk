@@ -40,16 +40,6 @@ DEVICE_ODM_MANIFEST_FILES := device/realme/RE58C2/vintf/odm/manifest/*.xml
 # --- Enforce checks ---
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
-
-
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_MANIFEST_FILE):$(TARGET_COPY_OUT_SYSTEM)/etc/vintf/manifest.xml \
-    $(DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE):$(TARGET_COPY_OUT_SYSTEM)/etc/vintf/compatibility_matrix.device.xml \
-    $(DEVICE_VENDOR_MANIFEST_FILE):$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest.xml \
-    $(DEVICE_ODM_MANIFEST_FILE):$(TARGET_COPY_OUT_ODM)/etc/vintf/manifest.xml
-
-
 PRODUCT_PACKAGES += \
     manifest_oplus_performance.xml \
     manifest_dualsim.xml \
