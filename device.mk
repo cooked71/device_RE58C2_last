@@ -55,11 +55,6 @@ PRODUCT_PACKAGES += \
     manifest_dualsim.xml \
     manifest_media_c2_V1_1_unisoc.xml
 
-
-
-
-
-
 # ===========================
 # Recovery configuration
 # ===========================
